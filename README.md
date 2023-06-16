@@ -1,14 +1,18 @@
-# Expo Router Example
-
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+# Android status bar lib conflict repro
 
 ## 🚀 How to use
 
 ```sh
-npx create-expo-app -e with-router
+cd my-app
+npm run prebuild
+npm run start
 ```
 
-## 📝 Notes
+- build android app
+- and start it
 
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
+## 📝 Issue
+
+StatusBar from `expo-status-bar` no longer reliably set colours and keep reverting back.
+
+Removing `react-native-keyboard-controller` fixes the issue
